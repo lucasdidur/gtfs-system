@@ -12,6 +12,10 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Logout</a></li>
+                        <li><a href="#">Controller: <?= $this->currentRoute()->getController() ?></a></li>
+                        <li><a href="#">Action: <?= $this->currentRoute()->getAction() ?></a></li>
+                        <li><a href="#">Module: <?= $this->currentRoute()->getModule() ?></a></li>
+                        <li><a href="#">Route: <?= $this->currentRoute()->getRoute() ?></a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -21,8 +25,14 @@
             <li class="<?= $this->currentRoute()->isActive('home')?>">
                 <a href="/"><i class="fa fa-th-large"></i> <span class="nav-label">Main view</span></a>
             </li>
-            <li class="<?= $this->currentRoute()->isActive('minor')?>">
+            <li class="<?= $this->currentRoute()->isActive('agencia')?>">
                 <a href="/agencia"><i class="fa fa-th-large"></i> <span class="nav-label">Agências</span> </a>
+            </li>
+            <li class="<?= $this->currentRoute()->isActive('rotas')?>">
+                <a href="/rota"><i class="fa fa-th-large"></i> <span class="nav-label">Rotas</span> </a>
+            </li>
+            <li class="<?= $this->currentRoute()->isActive('paradas')?>">
+                <a href="/paradas"><i class="fa fa-th-large"></i> <span class="nav-label">Paradas</span> </a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>

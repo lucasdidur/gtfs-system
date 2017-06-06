@@ -24,7 +24,7 @@ return [
                     ],
                 ],
             ],
-            'agency' => [
+            'agencia' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route'    => '/agencia[/:action][/:id]',
@@ -38,14 +38,31 @@ return [
                     ],
                 ],
             ],
+            'rota' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/rota[/:action][/:id]',
+                    'constraints' => array(
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
+                    ),
+                    'defaults' => [
+                        'controller' => Controller\RouteController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
         ],
     ],
+
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
             Controller\AgencyController::class => InvokableFactory::class,
+            Controller\RouteController::class => InvokableFactory::class,
         ],
     ],
+
     'view_manager' => [
         'display_not_found_reason' => true,
         'display_exceptions'       => true,

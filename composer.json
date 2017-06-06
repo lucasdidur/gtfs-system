@@ -16,7 +16,8 @@
         "zendframework/zend-component-installer": "^1.0 || ^0.7 || ^1.0.0-dev@dev",
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
-        "tasmaniski/zend-current-route": "^2.0"
+        "tasmaniski/zend-current-route": "^2.0",
+        "doctrine/doctrine-orm-module": "^1.1"
     },
     "autoload": {
         "psr-4": {
@@ -41,5 +42,8 @@
         "server": "composer run serve --timeout=0",
         "serve": "php -S 0.0.0.0:8080 -t public public/index.php",
         "test": "phpunit"
+    },
+    "require-dev": {
+        "zendframework/zend-developer-tools": "^1.1"
     }
 }

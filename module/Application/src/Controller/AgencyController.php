@@ -23,9 +23,11 @@ class AgencyController extends AbstractActionController
 
     public function editAction()
     {
+        return new ViewModel();
     }
 
     public function deleteAction()
     {
+        return new ViewModel();
     }
 }
