@@ -6,16 +6,12 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                                <strong class="font-bold">Usuário</strong>
+                            </span> <span class="text-muted text-xs block">Pérola do Oeste<b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Logout</a></li>
-                        <li><a href="#">Controller: <?= $this->currentRoute()->getController() ?></a></li>
-                        <li><a href="#">Action: <?= $this->currentRoute()->getAction() ?></a></li>
-                        <li><a href="#">Module: <?= $this->currentRoute()->getModule() ?></a></li>
-                        <li><a href="#">Route: <?= $this->currentRoute()->getRoute() ?></a></li>
+                        <li><a href="#">Sair</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
@@ -28,12 +24,17 @@
             <li class="<?= $this->currentRoute()->isActive('agencia')?>">
                 <a href="/agencia"><i class="fa fa-th-large"></i> <span class="nav-label">Agências</span> </a>
             </li>
-            <li class="<?= $this->currentRoute()->isActive('rotas')?>">
+            <li class="<?= $this->currentRoute()->isActive('rota')?>">
                 <a href="/rota"><i class="fa fa-th-large"></i> <span class="nav-label">Rotas</span> </a>
             </li>
-            <li class="<?= $this->currentRoute()->isActive('paradas')?>">
-                <a href="/paradas"><i class="fa fa-th-large"></i> <span class="nav-label">Paradas</span> </a>
+            <li class="<?= $this->currentRoute()->isActive('parada')?>">
+                <a href="/parada"><i class="fa fa-th-large"></i> <span class="nav-label">Paradas</span> </a>
             </li>
+
+            <li class="<?= $this->currentRoute()->isActive('viagem')?>">
+                <a href="/viagem"><i class="fa fa-th-large"></i> <span class="nav-label">Viagens</span> </a>
+            </li>
+
             <li>
                 <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">

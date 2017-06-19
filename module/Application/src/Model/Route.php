@@ -1,5 +1,6 @@
 <?php
 
+namespace Application\Model;
 /**
  * Created by PhpStorm.
  * User: Lucas

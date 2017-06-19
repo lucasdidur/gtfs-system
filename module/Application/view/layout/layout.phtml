@@ -13,6 +13,11 @@
         ->appendStylesheet($this->basePath('css/vendor.css'))
         ->appendStylesheet($this->basePath('css/app.css'))
 
+        ->appendStylesheet($this->basePath('css/plugins/iCheck/custom.css'))
+
+        ->appendStylesheet($this->basePath('css/plugins/datapicker/datepicker3.css'))
+
+        ->appendStylesheet($this->basePath('css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css'))
 
     ?>
 
@@ -36,7 +41,7 @@
             <?php echo $this->render('topnavbar.phtml') ?>
 
             <!-- Main view  -->
-            <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="wrapper wrapper-content -animated -fadeInRight">
                 <?= $this->content ?>
             </div>
 
@@ -77,6 +82,31 @@
 
   <!-- Sparkline -->
   <script src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
+
+  <!-- Data picker -->
+  <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+
+  <!-- iCheck -->
+  <script src="js/plugins/iCheck/icheck.min.js"></script>
+  <script>
+      $(document).ready(function () {
+
+          $('.input-group.date').datepicker({
+              todayBtn: "linked",
+              keyboardNavigation: false,
+              forceParse: false,
+              calendarWeeks: true,
+              autoclose: true
+          });
+
+
+          $('.i-checks').iCheck({
+              checkboxClass: 'icheckbox_square-green',
+              radioClass: 'iradio_square-green',
+          });
+      });
+  </script>
 
 
   <script>

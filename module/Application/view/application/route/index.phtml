@@ -1,0 +1,177 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox">
+            <div class="ibox-title">
+                <h5>Gerenciar Rotas</h5>
+                <div class="ibox-tools">
+                    <a href="" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addRoute">Adicionar rota</a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="table-responsive">
+                    <table class="footable table table-stripped toggle-arrow-tiny table-hover">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th data-hide="all">Site</th>
+                            <th>Ação</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span class="label label-primary">11</span>
+                            </td>
+                            <td>
+                                Santa Cruz
+                            </td>
+                            <td>
+                                Passa pela campo real e unicentro. A noite vai para o jordão.
+                            </td>
+                            <td>
+                                (42) 3035-3388
+                            </td>
+                            <td>
+                                <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editAgency">
+                                    Editar
+                                </button>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="addRoute" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Fechar</span></button>
+                <h4 id="myModalLabelAddRoute" class="modal-title">Adicionar Rota</h4>
+            </div>
+            <div class="error-class alert alert-danger" style="margin-top:5px;margin-bottom:0px;display:none;"></div>
+            <form method="POST" id="add_route_form">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="form-group col-sm-12">
+                            <label for="add_route_type_cat">Tipo da Rota <span class="requ-lft">Required</span></label>
+                            <select class="form-control custom_srch" name="route_type_cat" id="add_route_type_cat" required="">
+                                <option value="" disabled="disabled">Selecione um</option>
+                                <option value="0">Bonde, bondinho, pequeno trem</option>
+                                <option value="1">Metro</option>
+                                <option value="2">Trem</option>
+                                <option value="3">Ônibus</option>
+                                <option value="4">Balsa</option>
+                                <option value="5">Teleférico</option>
+                                <option value="6">Gondola, teleférico suspenso</option>
+                                <option value="7">Funicular</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <input type="hidden" class="form-control" value="" name="add_route_hdn" id="add_route_hdn">
+                        <div class="form-group col-sm-12">
+                            <label for="add_route_long_name">Nome da Rota (Longo)<span class="requ-lft">Required</span></label>
+                            <input type="text" class="form-control" placeholder="Enter the name of the route. E.g. Downtown via Station" name="route_long_name" id="add_route_long_name" required="">
+                        </div>
+                    </div>
+
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <!-- h4 class="panel-title" -->
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" class="collapsed">Optional Fields (open/close)</a>
+                                <!--/h4 -->
+                            </div>
+                            <div id="collapseFour" class="panel-collapse out collapse" style="height: 0px;">
+                                <div class="panel-body">
+
+                                    <div class="row">
+                                        <div class="form-group col-sm-9">
+                                            <label for="add_route_short_name">Nome da Rota (Curto)</label>
+                                            <input type="text" class="form-control" name="route_short_name" id="add_route_short_name" placeholder="Route number/id. Maximum 6 characters.">
+                                        </div>
+
+                                        <div class="form-group col-sm-3">
+                                            <label for="add_route_id">Id <span class="requ-lft">Required</span></label>
+                                            <input type="text" class="form-control" placeholder="" name="add_route_id" id="add_route_id" onchange="show_service_alert()" required="">
+                                            <input type="hidden" class="form-control" value="63519" name="route_ag_file_id">
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label for="add_rt_agency_id_sel">Agency <span class="requ-lft">Required</span></label>
+                                            <input type="hidden" class="form-control" value="1" name="agency_id" id="add_rt_agency_id">
+                                            <select class="form-control custom_srch" name="agency_id_sel" id="add_rt_agency_id_sel" disabled="disabled">
+                                                <option value="" disabled="disabled">Select One</option>
+                                                <option value="1">Perola do Oeste</option>
+                                                <option value="EPTC">Empresa Publica de Transportes e Circulação</option>
+                                                <option value="6216179">Big Blue Bus</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="abt-agency form-group col-sm-12">
+                                            <label for="add_route_desc">Description</label>
+                                            <textarea class="form-control" rows="2" name="route_desc" id="add_route_desc" style="line-height:normal;" placeholder="Provide a textual description of the route, it's features and running times. Do not duplicate the long and/or short names."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="abt-agency form-group col-sm-12">
+                                            <label for="add_route_url">Route URL<a target="_blank" class="test_link fetch_link" href="#" style="font-size:12px;padding-left:15px;padding-top:6px;">Test Link</a></label>
+                                            <input type="url" class="form-control" name="route_url" id="add_route_url" placeholder="If available, the route specific web page. Do not use the agency url.">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-sm-6">
+                                            <div class="modal_macs">
+                                                <label for="add_route_color">Route Color</label>
+                                                <div class="input-group input-append color colorpicker" data-color=" rgb(255, 255, 255)" data-color-format="hex">
+                                                    <input type="text" class="form-control" name="route_color" id="add_route_color" value="#ffffff">
+                                                    <div class="input-group-btn color_btn">
+                                                        <span class="add-on"><i style="background-color: rgb(255, 255, 255);"></i></span>
+                                                    </div><!-- /btn-group -->
+                                                </div><!-- /input-group -->
+                                            </div>
+                                        </div><!-- /.col-lg-6 -->
+                                        <div class="form-group col-sm-6">
+                                            <div class="modal_macs">
+                                                <label for="add_route_text_color">Text Color</label>
+                                                <div class="input-group input-append color colorpicker" data-color=" rgb(0, 0, 0);" data-color-format="hex">
+                                                    <input type="text" class="form-control" name="route_text_color" id="add_route_text_color" value="#000000">
+                                                    <div class="input-group-btn color_btn">
+                                                        <span class="add-on"><i style="background-color: rgb(0, 0, 0);"></i></span>
+                                                    </div><!-- /btn-group -->
+                                                </div><!-- /input-group -->
+                                            </div>
+                                        </div><!-- /.col-lg-6 -->
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" name="add_route_submit" id="add_route_submit">Submit</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

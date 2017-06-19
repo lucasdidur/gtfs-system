@@ -7,14 +7,24 @@
 
 namespace Application\Controller;
 
+use Application\Model\AgencyTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
 
 class AgencyController extends AbstractActionController
 {
+    private $table;
+    public function __construct(AgencyTable $table) {
+        $this->table = $table;
+    }
+
     public function indexAction()
     {
-        return new ViewModel();
+        $view = new ViewModel([
+            'data' => $this->table->fetchAll(),
+            'count' => $this->table->fetchAll()->count()
+        ]);
+        return $view;
     }
 
     public function addAction()

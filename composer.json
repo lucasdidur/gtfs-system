@@ -17,7 +17,9 @@
         "zendframework/zend-mvc": "^3.0.1",
         "zfcampus/zf-development-mode": "^3.0",
         "tasmaniski/zend-current-route": "^2.0",
-        "doctrine/doctrine-orm-module": "^1.1"
+        "doctrine/doctrine-orm-module": "^1.1",
+        "zendframework/zend-db": "^2.8",
+        "bjyoungblood/bjy-profiler": "^1.1"
     },
     "autoload": {
         "psr-4": {

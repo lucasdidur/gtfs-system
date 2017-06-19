@@ -8,6 +8,19 @@
 return [
     // Additional modules to include when in development mode
     'modules' => [
+        'Zend\Log',
+        'Zend\Mail',
+        'Zend\Mvc\Console',
+        'Zend\Mvc\I18n',
+        'Zend\I18n',
+        'Zend\Mvc\Plugin\FilePrg',
+        'Zend\Mvc\Plugin\FlashMessenger',
+        'Zend\Mvc\Plugin\Identity',
+        'Zend\Mvc\Plugin\Prg',
+        'Zend\Navigation',
+        'Zend\Serializer',
+        'Zend\ServiceManager\Di',
+        'Zend\Session',
     ],
     // Configuration overrides during development mode
     'module_listener_options' => [

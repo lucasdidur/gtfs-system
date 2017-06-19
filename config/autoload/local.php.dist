@@ -12,4 +12,8 @@
  */
 
 return [
+    'db' => [
+        'username' => 'Your username for mysql connection',
+        'password' => 'Your password for mysql connection',
+   ],
 ];

@@ -7,7 +7,7 @@ namespace Application\Model;
  * Date: 10/05/2017
  * Time: 14:33
  */
-class Stop
+class StopTable
 {
 
 }
